@@ -23,7 +23,7 @@ export class LoginComponent {
 console.log(user);
 console.log(user.user.role);
         if (user.message === 'Login successful' && user.user.role === "ADMIN") {
-          this.router.navigate(['/admin']); // Navigate to the Admin component
+          this.router.navigate(['/organizer']); // Navigate to the Admin component
         } else if (user.message === 'Login successful' && user.user.role === 'ORGANIZER') {
           this.router.navigate(['/organizer']); // Navigate to the Organizer component
         }
