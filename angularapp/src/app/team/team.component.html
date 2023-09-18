@@ -1,7 +1,7 @@
 <ul>
   <li *ngFor="let team of teams" id="list">
     {{ team.name }} (Budget: {{ team.maximumBudget }})
-    <button (click)="onEditTeam(team)">Edit</button>
+    <!-- <button (click)="onEditTeam(team)">Edit</button> -->
     <button (click)="onDeleteTeam(team.id)">Delete</button>
   </li>
 </ul>
