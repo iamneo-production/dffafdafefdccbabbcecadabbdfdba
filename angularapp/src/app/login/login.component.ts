@@ -10,27 +10,22 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent {
   username: string="";
   password: string="";
-  role: string="";
 
   constructor(private authService: AuthService, private router: Router) { }
 
   login(): void {
-    console.log(this.role);
-
     // Call the authentication service to login
-    this.authService.login(this.username, this.password, this.role).subscribe(
+    this.authService.login(this.username, this.password).subscribe(
       (user) => {
-console.log(user);
-console.log(user.user.role);
-        if (user.message === 'Login successful' && user.user.role === "ADMIN") {
-          this.router.navigate(['/organizer']); // Navigate to the Admin component
-        } else if (user.message === 'Login successful' && user.user.role === 'ORGANIZER') {
+        
+        if (user.role === 'ADMIN') {
+          this.router.navigate(['/admin']); // Navigate to the Admin component
+        } else if (user.role === 'ORGANIZER') {
           this.router.navigate(['/organizer']); // Navigate to the Organizer component
         }
       },
       (error) => {
         // Handle login error, display a message, etc.
-        console.error("Login error:", error);
       }
     );
   }

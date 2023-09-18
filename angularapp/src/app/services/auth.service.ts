@@ -7,15 +7,14 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'https://localhost:7205/api'; // Replace with your Spring Boot backend URL
+  private baseUrl = 'http://localhost:8080/api'; // Replace with your Spring Boot backend URL
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string, role: string): Observable<any> {
-    const body = { username, password, role };
+  login(username: string, password: string): Observable<any> {
+    const body = { username, password };
     console.log(body)
-    return this.http.post<any>(`${this.baseUrl}/users/login`, body)
-    .pipe(
+    return this.http.post<any>(`${this.baseUrl}/auth/login`, body).pipe(
       tap((user) => this.storeUserData(user)),
       catchError(this.handleError<any>('login'))
     );
@@ -23,7 +22,7 @@ export class AuthService {
 
   register(username: string, password: string, role: string): Observable<any> {
     const body = { username, password, role };
-    return this.http.post<any>(`${this.baseUrl}/users/register`, body).pipe(
+    return this.http.post<any>(`${this.baseUrl}/register`, body).pipe(
       tap((user) => this.storeUserData(user)),
       catchError(this.handleError<any>('register'))
     );

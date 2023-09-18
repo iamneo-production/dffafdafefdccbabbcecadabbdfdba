@@ -8,7 +8,7 @@ import { Player } from '../../models/player.model';
   providedIn: 'root'
 })
 export class AdminService {
-  private baseUrl = 'https://localhost:7205/api/admin'; // Replace with your Spring Boot backend URL
+  private baseUrl = 'http://localhost:8080/api/admin'; // Replace with your Spring Boot backend URL
 
   constructor(private http: HttpClient) { }
 

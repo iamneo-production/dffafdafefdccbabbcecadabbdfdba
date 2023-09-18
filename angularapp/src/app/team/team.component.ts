@@ -17,7 +17,9 @@ export class TeamComponent implements OnInit {
     // this.getTeams();
     // this.getPlayers();
   }
-  @Input() teams: Team[] = [];
+  @Input() teams: Team[] = [
+    { name: 'aasd', maximumBudget: 1 }
+  ];
   @Input() players: Player[] = [];
 
   @Input() editedTeam: Team | null = null;
@@ -25,9 +27,27 @@ export class TeamComponent implements OnInit {
   @Output() saveEditedTeamEvent = new EventEmitter<void>();
   @Output() cancelEditTeamEvent = new EventEmitter<void>();
   @Output() deleteTeamEvent = new EventEmitter<number>();
+  @Output() createTeamEvent = new EventEmitter<Team>(); // New event emitter for creating a player
+
+  newTeam: Team = { name: '', maximumBudget: 1 };
 
   // editedTeam: Team | null = null;
   editedPlayer: Player | null = null;
+
+
+  get maxBidStatus(): string {
+    console.log(this.newTeam.maximumBudget);
+
+    if(this.newTeam.maximumBudget == 1){
+      return "1";
+    } else if (this.newTeam.maximumBudget && this.newTeam.maximumBudget < 1000) {
+      return 'Too Low';
+    } else if (this.newTeam.maximumBudget && this.newTeam.maximumBudget < 5000) {
+      return 'Low';
+    } else {
+      return 'Good Budget';
+    }
+  }
 
   onEditTeam(team: Team): void {
     this.editTeamEvent.emit(team);
@@ -45,6 +65,12 @@ export class TeamComponent implements OnInit {
   onDeleteTeam(teamId: number): void {
     this.deleteTeamEvent.emit(teamId);
   }
+
+  createTeam(): void {
+    this.createTeamEvent.emit(this.newTeam); // Emit the event along with the new player object
+    this.newTeam = { name: '', maximumBudget: 1 }; // Reset the newPlayer object
+  }
+
 
   // getTeams(): void {
   //   console.log(this.teams);

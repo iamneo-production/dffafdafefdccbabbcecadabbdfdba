@@ -9,8 +9,11 @@ import { Player } from '../../models/player.model';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  teams: Team[] = [];
-  players: Player[] = [];
+  teams: Team[] = [
+  ];
+  players: Player[] = [
+
+  ];
 
   newTeam: Team = { name: '', maximumBudget: 1 };
   newPlayer: Player = { name: '', age: 0, category: '',biddingPrice:0};
@@ -32,8 +35,10 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  createTeam(): void {
-    this.adminService.createTeam(this.newTeam).subscribe(() => {
+  createTeam(newTeam:Team): void {
+    console.log(newTeam);
+
+    this.adminService.createTeam(newTeam).subscribe(() => {
       this.getTeams();
      // this.newTeam = { name: '', maximumBudget: 0 };
     });
@@ -69,8 +74,9 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  createPlayer(): void {
-    this.adminService.createPlayer(this.newPlayer).subscribe(() => {
+  createPlayer(newPlayer: Player): void {
+    console.log(newPlayer);
+    this.adminService.createPlayer(newPlayer).subscribe(() => {
       this.getPlayers();
     });
   }

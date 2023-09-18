@@ -29,15 +29,6 @@
            #passwordNgModel="ngModel">
     <div *ngIf="passwordNgModel.invalid && (passwordNgModel.dirty || passwordNgModel.touched || loginForm.submitted)"
          class="error-message">Password is required</div>
-
-         <label for="role">Role:</label>
-    <select id="role" [(ngModel)]="role" name="role" required #roleNgModel="ngModel">
-      <option value="" disabled>Select a role</option>
-      <option value="ADMIN">ADMIN</option>
-      <option value="ORGANIZER">ORGANIZER</option>
-    </select>
-    <div *ngIf="roleNgModel.invalid && (roleNgModel.dirty || roleNgModel.touched)"
-         class="error-message">Role is required</div>
       <button type="submit" [disabled]="loginForm.invalid">Login</button>
     </form>
   </div>

@@ -62,7 +62,7 @@
     <h1>Admin Panel</h1>
 
     <!-- Create Team Form -->
-    <div>
+    <!-- <div>
       <h2>Create New Team</h2>
       <form (ngSubmit)="createTeam()" #createTeamForm="ngForm" novalidate>
         <label for="teamName">Team Name:</label>
@@ -75,7 +75,7 @@
 
         <button id="createTeam" type="submit" [disabled]="createTeamForm.invalid">Create</button>
       </form>
-    </div>
+    </div> -->
 
 
     <!-- Team List -->
@@ -87,7 +87,8 @@
         (editTeamEvent)="editTeam($event)"
         (saveEditedTeamEvent)="saveEditedTeam()"
         (cancelEditTeamEvent)="cancelEditTeam()"
-        (deleteTeamEvent)="deleteTeam($event)">
+        (deleteTeamEvent)="deleteTeam($event)"
+        (createTeamEvent)="createTeam($event)">
                   </app-team>
         <!-- <li *ngFor="let team of teams">
           {{ team.name }} (Budget: {{ team.maximumBudget }})
@@ -113,25 +114,7 @@
   </div> -->
 
     <!-- Create Player Form -->
-    <div>
-      <h2>Create New Player</h2>
-      <form (ngSubmit)="createPlayer()">
-        <label for="playerName">Player Name:</label>
-        <input type="text" id="playerName" [(ngModel)]="newPlayer.name" name="playerName" required>
 
-        <label for="playerAge">Player Age:</label>
-        <input type="number" id="playerAge" [(ngModel)]="newPlayer.age" name="playerAge" required>
-
-        <label for="PlayerCategory">Player Category:</label>
-    <input type="text" id="PlayerCategory" [(ngModel)]="newPlayer.category" name="Playercategory" required>
-
-    <label for="playerBiddingPrice">Bidding Price:</label>
-    <input type="number" id="playerBiddingPrice" [(ngModel)]="newPlayer.biddingPrice" name="playerBiddingPrice" required>
-        <!-- Other player fields (category, bidding price, etc.) can be added here -->
-
-        <button type="submit">Create</button>
-      </form>
-    </div>
 
     <!-- Player List -->
     <div>
@@ -141,7 +124,9 @@
               (editPlayerEvent)="editPlayer($event)"
               (saveEditedPlayerEvent)="saveEditedPlayer()"
               (cancelEditPlayerEvent)="cancelEditPlayer()"
-              (deletePlayerEvent)="deletePlayer($event)">
+              (deletePlayerEvent)="deletePlayer($event)"
+              (createPlayerEvent)="createPlayer($event)"
+              >
       </app-player>
       <!-- <ul>
         <li *ngFor="let player of players">

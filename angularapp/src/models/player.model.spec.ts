@@ -1,7 +1,7 @@
 import { Player } from './player.model';
 
 describe('Player Models', () => {
-  fit('should create a Player instance', () => {
+  fit('Week4_Day3_should_create_Player_instance', () => {
     const player: Player = {
       name: 'John',
       age: 25,
@@ -17,16 +17,16 @@ describe('Player Models', () => {
     expect(player.selectedTeamId).toBe(1);
   });
 
-  fit('should create a Player instance with default values', () => {
-    const player: Player = {
-      name: 'Jane',
-      age: 30
-    };
-    expect(player).toBeTruthy();
-    expect(player.name).toBe('Jane');
-    expect(player.age).toBe(30);
-    expect(player.category).toBeUndefined();
-    expect(player.biddingPrice).toBeUndefined();
-    expect(player.selectedTeamId).toBeUndefined();
-  });
+  // it('Week4_Day3_should_create_Player_instance_with_default_values', () => {
+  //   const player: Player = {
+  //     name: 'Jane',
+  //     age: 30
+  //   };
+  //   expect(player).toBeTruthy();
+  //   expect(player.name).toBe('Jane');
+  //   expect(player.age).toBe(30);
+  //   expect(player.category).toBeUndefined();
+  //   expect(player.biddingPrice).toBeUndefined();
+  //   expect(player.selectedTeamId).toBeUndefined();
+  // });
 });

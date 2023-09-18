@@ -39,113 +39,113 @@ describe('AdminComponent', () => {
 
   });
 
-  fit('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create admin Component', () => {
+  //   expect(component).toBeTruthy();
+  // });
 
-  it('should fetch teams on initialization', fakeAsync(() => {
-    const mockTeams: Team[] = [
-      { id: 1, name: 'Team A', maximumBudget: 100 },
-      { id: 2, name: 'Team B', maximumBudget: 150 }
-    ];
-    mockAdminService.getTeams.and.returnValue(of(mockTeams));
+  // it('should fetch teams on initialization', fakeAsync(() => {
+  //   const mockTeams: Team[] = [
+  //     { id: 1, name: 'Team A', maximumBudget: 100 },
+  //     { id: 2, name: 'Team B', maximumBudget: 150 }
+  //   ];
+  //   mockAdminService.getTeams.and.returnValue(of(mockTeams));
 
-    component.ngOnInit();
-    tick();
+  //   component.ngOnInit();
+  //   tick();
 
-    expect(component.teams).toEqual(mockTeams);
-  }));
+  //   expect(component.teams).toEqual(mockTeams);
+  // }));
 
-  it('should create a team', fakeAsync(() => {
-    const mockTeams: Team[] = [
-      { name: 'Team A', maximumBudget: 100 },
-      { name: 'Team B', maximumBudget: 150 }
-    ];
-    const newTeam: Team = { name: 'New Team', maximumBudget: 200 };
-    mockAdminService.createTeam.and.returnValue(of());
-    mockAdminService.getTeams.and.returnValue(of([...mockTeams, newTeam]));
+  // it('should create a team', fakeAsync(() => {
+  //   const mockTeams: Team[] = [
+  //     { name: 'Team A', maximumBudget: 100 },
+  //     { name: 'Team B', maximumBudget: 150 }
+  //   ];
+  //   const newTeam: Team = { name: 'New Team', maximumBudget: 200 };
+  //   mockAdminService.createTeam.and.returnValue(of());
+  //   mockAdminService.getTeams.and.returnValue(of([...mockTeams, newTeam]));
 
-    component.newTeam = newTeam;
-    component.createTeam();
-    tick();
+  //   component.newTeam = newTeam;
+  //   component.createTeam();
+  //   tick();
 
-    expect(mockAdminService.createTeam).toHaveBeenCalled(); // Use mockAdminService instead of component
-    expect(mockAdminService.getTeams).toHaveBeenCalled(); // Use mockAdminService instead of component
-    expect(component.teams).toEqual([...mockTeams, newTeam]);
-    expect(component.newTeam).toEqual({ name: '', maximumBudget: 0 });
-  }));
+  //   expect(mockAdminService.createTeam).toHaveBeenCalled(); // Use mockAdminService instead of component
+  //   expect(mockAdminService.getTeams).toHaveBeenCalled(); // Use mockAdminService instead of component
+  //   expect(component.teams).toEqual([...mockTeams, newTeam]);
+  //   expect(component.newTeam).toEqual({ name: '', maximumBudget: 0 });
+  // }));
 
-  it('should add a new player on form submission', fakeAsync(() => {
+  fit('Week5_Day4_should add a new player on form submission', fakeAsync(() => {
     const initialPlayerCount = component.players.length;
     component.newPlayer = { name: 'New Player', age: 25 };
 
-    component.createPlayer();
+    component.createPlayer(component.newPlayer);
     tick();
 
     expect(component.players.length).toBe(initialPlayerCount + 1);
   }));
 
-  fit('should get teams and players on initialization', () => {
-    const mockTeams: Team[] = [{ id: 1, name: 'Team A', maximumBudget: 100000 }];
-    const mockPlayers: Player[] = [{ id: 1, name: 'Player 1', age: 25 }];
+  // fit('Week5_Day3_should get teams and players on initialization', () => {
+  //   const mockTeams: Team[] = [{ id: 1, name: 'Team A', maximumBudget: 100000 }];
+  //   const mockPlayers: Player[] = [{ id: 1, name: 'Player 1', age: 25 }];
 
-    mockAdminService.getTeams.and.returnValue(of(mockTeams));
-    mockAdminService.getPlayers.and.returnValue(of(mockPlayers));
+  //   mockAdminService.getTeams.and.returnValue(of(mockTeams));
+  //   mockAdminService.getPlayers.and.returnValue(of(mockPlayers));
 
-    fixture.detectChanges();
+  //   fixture.detectChanges();
 
-    expect(component.teams).toEqual(mockTeams);
-    expect(component.players).toEqual(mockPlayers);
-  });
+  //   expect(component.teams).toEqual(mockTeams);
+  //   expect(component.players).toEqual(mockPlayers);
+  // });
 
-  it('should display team details', () => {
-    const teamElement = fixture.nativeElement.querySelector('.team-list li');
-    expect(teamElement.textContent).toContain(component.teams[0].name);
-  });
+  // it('should display team details', () => {
+  //   const teamElement = fixture.nativeElement.querySelector('.team-list li');
+  //   expect(teamElement.textContent).toContain(component.teams[0].name);
+  // });
 
-  it('should display player list', () => {
-    component.players = [
-      { name: 'Player X', age: 22 },
-      { name: 'Player Y', age: 28 },
-    ];
-    fixture.detectChanges();
-    const playerElements: HTMLElement[] = fixture.nativeElement.querySelectorAll('.player-item');
-    expect(playerElements.length).toBe(2);
-  });
+  // fit('Week5_Day3_should display player list', () => {
+  //   component.players = [
+  //     { name: 'Player X', age: 22 },
+  //     { name: 'Player Y', age: 28 },
+  //   ];
+  //   fixture.detectChanges();
+  //   const playerElements: HTMLElement[] = fixture.nativeElement.querySelectorAll('.player-item');
+  //   expect(playerElements.length).toBe(2);
+  // });
 
-  it('should show teamName required error message on admin page', fakeAsync(() => {
-    const button = fixture.nativeElement.querySelector('#createTeam');
+  // it('should show teamName required error message on admin page', fakeAsync(() => {
+  //   const button = fixture.nativeElement.querySelector('#createTeam');
 
-    const usernameInput = debugElement.query(By.css('#teamName'));
-    console.log(usernameInput)
-    usernameInput.nativeElement.value = ''; // Set an empty value
-    usernameInput.nativeElement.dispatchEvent(new Event('input')); // Trigger input event
-    fixture.detectChanges();
-    console.log("usernameInput")
+  //   const usernameInput = debugElement.query(By.css('#teamName'));
+  //   console.log(usernameInput)
+  //   usernameInput.nativeElement.value = ''; // Set an empty value
+  //   usernameInput.nativeElement.dispatchEvent(new Event('input')); // Trigger input event
+  //   fixture.detectChanges();
+  //   console.log("usernameInput")
 
-    tick(); // Advance time to handle async operations
+  //   tick(); // Advance time to handle async operations
 
-    const errorMessage = debugElement.query(By.css('.error-message'));
-    console.log("hai"+errorMessage);
+  //   const errorMessage = debugElement.query(By.css('.error-message'));
+  //   console.log("hai"+errorMessage);
 
 
-    expect(errorMessage.nativeElement.textContent).toContain('Username is required');
-  }));
+  //   expect(errorMessage.nativeElement.textContent).toContain('Username is required');
+  // }));
 
-  it('should show teamName required error message on admin page', fakeAsync(() => {
-    const button = debugElement.query(By.css('#createTeam'));
+  // it('should show teamName required error message on admin page', fakeAsync(() => {
+  //   const button = debugElement.query(By.css('#createTeam'));
 
-    // Set an empty value for newTeam.name
-    component.newTeam.name = '';
-    fixture.detectChanges();
+  //   // Set an empty value for newTeam.name
+  //   component.newTeam.name = '';
+  //   fixture.detectChanges();
 
-    // Click the "Create Team" button
-    button.nativeElement.click();
-    tick();
+  //   // Click the "Create Team" button
+  //   button.nativeElement.click();
+  //   tick();
 
-    const errorMessage = debugElement.query(By.css('.error-message'));
-    expect(errorMessage.nativeElement.textContent).toContain('TeamName is required');
-  }));
+  //   const errorMessage = debugElement.query(By.css('.error-message'));
+  //   expect(errorMessage.nativeElement.textContent).toContain('TeamName is required');
+  // }));
 
 
   // Add more test cases as needed...

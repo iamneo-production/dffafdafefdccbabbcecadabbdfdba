@@ -13,6 +13,24 @@ export class PlayerComponent {
   @Output() saveEditedPlayerEvent = new EventEmitter<void>();
   @Output() cancelEditPlayerEvent = new EventEmitter<void>();
   @Output() deletePlayerEvent = new EventEmitter<number>();
+  @Output() createPlayerEvent = new EventEmitter<Player>(); // New event emitter for creating a player
+
+  newPlayer: Player = { name: '', age: 0, category: '', biddingPrice: 0 }; // New player object for the form
+
+
+  get biddingPriceStatus(): string {
+    console.log(this.newPlayer.biddingPrice);
+
+    if(this.newPlayer.biddingPrice == 0){
+      return "0";
+    } else if (this.newPlayer.biddingPrice && this.newPlayer.biddingPrice < 1000) {
+      return 'Too Low';
+    } else if (this.newPlayer.biddingPrice && this.newPlayer.biddingPrice < 5000) {
+      return 'Low';
+    } else {
+      return 'Good bidding';
+    }
+  }
 
   onEditPlayer(player: Player): void {
     this.editPlayerEvent.emit(player);
@@ -28,5 +46,10 @@ export class PlayerComponent {
 
   onDeletePlayer(playerId: number): void {
     this.deletePlayerEvent.emit(playerId);
+  }
+
+  createPlayer(): void {
+    this.createPlayerEvent.emit(this.newPlayer); // Emit the event along with the new player object
+    this.newPlayer = { name: '', age: 0, category: '', biddingPrice: 0 }; // Reset the newPlayer object
   }
 }

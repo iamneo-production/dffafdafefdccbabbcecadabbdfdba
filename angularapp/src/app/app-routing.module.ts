@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'organizer', component: OrganizerComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'regiter', component: RegistrationComponent },
+  { path: 'signup', component: RegistrationComponent },
   { path: 'error', component: ErrorComponent, data: { message: 'Oops! Something went wrong.' } },
   { path: '**', redirectTo: '/error', pathMatch: 'full' }, // Handle all other routes and redirect to the error page
 ];
