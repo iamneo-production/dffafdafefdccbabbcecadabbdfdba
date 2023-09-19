@@ -58,7 +58,7 @@ namespace TestProject
         public void Week4_Day1_Test_Migrationfolder_Exists()
         {
 
-            string folderPath = @"/home/coder/project/workspace/Week4_webapi/Migrations/"; // Replace with the folder path you want to check
+            string folderPath = @"D:\dotnet incremental project\week4_1\Week4_webapi\Week4_webapi\Migrations\"; // Replace with the folder path you want to check
             bool folderExists = Directory.Exists(folderPath);
 
             Assert.IsTrue(folderExists, "The folder does not exist.");
@@ -101,7 +101,7 @@ namespace TestProject
         }
 
         [Test]
-        public void Week5_Day2_GetPlayersMethod_AdminController_Exists()
+        public void Week4_Day3_GetPlayersMethod_AdminController_Exists()
         {
 
             var controllerType = typeof(AdminController);
@@ -114,7 +114,7 @@ namespace TestProject
         }
 
         [Test]
-        public void Week5_Day2_GetTeamsMethod_AdminController_Exists()
+        public void Week4_Day3_GetTeamsMethod_AdminController_Exists()
         {
 
             var controllerType = typeof(AdminController);
@@ -124,6 +124,44 @@ namespace TestProject
 
 
             Assert.IsNotNull(method);
+        }
+
+        [Test]
+        public void Week5_Day5_PutPlayerMethod_AdminController_Exists()
+        {
+
+            var controllerType = typeof(AdminController);
+            var controller = Activator.CreateInstance(controllerType, _context);
+            var player = new Player
+            {
+                Id= 1,
+                Name = "John Doe",
+                Age= 24,
+                BiddingPrice= 25,
+                Category="asd"
+            };
+
+            MethodInfo method = controllerType.GetMethod("PutPlayer", new[] { typeof(int), typeof(Player) });
+            var result = method.Invoke(controller, new object[] { 1, player });
+
+
+            Assert.IsNotNull(method);
+            Assert.IsNotNull(result);
+        }
+
+        [Test]
+        public void Week5_Day5_DeletePlayerMethod_AdminController_Exists()
+        {
+
+            var controllerType = typeof(AdminController);
+            var controller = Activator.CreateInstance(controllerType, _context);
+
+            MethodInfo method = controllerType.GetMethod("DeletePlayer", new[] { typeof(int) });
+            var result = method.Invoke(controller, new object[] { 1 });
+
+
+            Assert.IsNotNull(method);
+            Assert.IsNotNull(result);
         }
     }
 }

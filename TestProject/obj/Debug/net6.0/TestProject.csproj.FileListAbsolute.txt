@@ -1,4 +1,9 @@
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/CoverletSourceRootsMapping
+D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.csproj.AssemblyReference.cache
+D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.GeneratedMSBuildEditorConfig.editorconfig
+D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.AssemblyInfoInputs.cache
+D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.AssemblyInfo.cs
+D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.csproj.CoreCompileInputs.cache
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/testhost.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Week4_webapi.deps.json
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Week4_webapi.runtimeconfig.json
@@ -49,6 +54,7 @@ D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Microsoft.DotNet.Scaffolding.Shared.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Microsoft.Extensions.Configuration.dll
@@ -340,18 +346,12 @@ D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Week4_webapi.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Week4_webapi.pdb
-D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.csproj.AssemblyReference.cache
-D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.GeneratedMSBuildEditorConfig.editorconfig
-D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.AssemblyInfoInputs.cache
-D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.AssemblyInfo.cs
-D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.csproj.CoreCompileInputs.cache
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.csproj.CopyComplete
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/refint/TestProject.dll
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.pdb
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/TestProject.genruntimeconfig.cache
 D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/obj/Debug/net6.0/ref/TestProject.dll
-D:/dotnet incremental project/week4_1/Week4_webapi/TestProject/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /home/coder/project/workspace/TestProject/bin/Debug/net6.0/CoverletSourceRootsMapping
 /home/coder/project/workspace/TestProject/obj/Debug/net6.0/TestProject.csproj.AssemblyReference.cache
 /home/coder/project/workspace/TestProject/obj/Debug/net6.0/TestProject.GeneratedMSBuildEditorConfig.editorconfig

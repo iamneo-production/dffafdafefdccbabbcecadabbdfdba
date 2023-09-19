@@ -42,11 +42,11 @@ describe('LoginComponent', () => {
 
   });
 
-  fit('Week4_Day6_LoginComponent_CreateComponent', () => {
+  fit('Week4_day5_LoginComponent_CreateComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('Week4_Day6_LoginComponent_call_login_method_on_admin_login', () => {
+  fit('Week5_Day5_call_login_method_on_admin_login', () => {
     spyOn(authService, 'login').and.returnValue(of({ role: 'ADMIN' }));
     const router = TestBed.inject(Router); // Inject Router
     spyOn(router, 'navigate'); // Spy on router's navigate method
@@ -58,7 +58,7 @@ describe('LoginComponent', () => {
     expect(authService.login).toHaveBeenCalledWith('admin', 'password');
   });
 
-  fit('Week4_Day6_LoginComponent_should_navigate_to_admin_on_admin_login', () => {
+  fit('Week5_Day5_should_navigate_to_admin_on_admin_login', () => {
     spyOn(authService, 'login').and.returnValue(of({ role: 'ADMIN' }));
     const router = TestBed.inject(Router); // Inject Router
     spyOn(router, 'navigate'); // Spy on router's navigate method
@@ -71,7 +71,7 @@ describe('LoginComponent', () => {
   });
 
 
-  fit('Week4_Day6_LoginComponent_should_call_login_method_on_organizer_login', () => {
+  fit('Week5_Day5_should_call_login_method_on_organizer_login', () => {
     spyOn(authService, 'login').and.returnValue(of({ role: 'ORGANIZER' }));
     const router = TestBed.inject(Router); // Inject Router
     spyOn(router, 'navigate'); // Spy on router's navigate method
@@ -83,7 +83,7 @@ describe('LoginComponent', () => {
     expect(authService.login).toHaveBeenCalledWith('organizer', 'password');
   });
 
-  fit('Week4_Day6_LoginComponent_should_navigate to organizer on organizer login', () => {
+  fit('Week5_Day5_should_navigate to organizer on organizer login', () => {
     spyOn(authService, 'login').and.returnValue(of({ role: 'ORGANIZER' }));
     const router = TestBed.inject(Router); // Inject Router
     spyOn(router, 'navigate'); // Spy on router's navigate method
@@ -113,7 +113,7 @@ describe('LoginComponent', () => {
   //   expect(button.disabled).toBeFalsy();
   // });
 
-  // fit('LoginComponent_should call login method on form submission', () => {
+  // fit('Week5_Day4_should call login method on form submission', () => {
   //   spyOn(component, 'login');
 
   //   const button = fixture.nativeElement.querySelector('button');
@@ -127,30 +127,29 @@ describe('LoginComponent', () => {
   // });
 
 
-  // fit('LoginComponent_should show username required error message', fakeAsync(() => {
-  //   const usernameInput = debugElement.query(By.css('#username'));
-  //   usernameInput.nativeElement.value = ''; // Set an empty value
-  //   usernameInput.nativeElement.dispatchEvent(new Event('input')); // Trigger input event
-  //   fixture.detectChanges();
+  fit('Week4_Day6_should show username required error message', fakeAsync(() => {
+    const usernameInput = debugElement.query(By.css('#username'));
+    usernameInput.nativeElement.value = ''; // Set an empty value
+    usernameInput.nativeElement.dispatchEvent(new Event('input')); // Trigger input event
+    fixture.detectChanges();
 
-  //   tick(); // Advance time to handle async operations
+    tick(); // Advance time to handle async operations
 
-  //   const errorMessage = debugElement.query(By.css('.error-message'));
-  //   // console.log(errorMessage);
+    const errorMessage = debugElement.query(By.css('.error-message'));
+    // console.log(errorMessage);
 
-  //   expect(errorMessage.nativeElement.textContent).toContain('Username is required');
-  // }));
+    expect(errorMessage.nativeElement.textContent).toContain('Username is required');
+  }));
 
-  
-  // fit('LoginComponent_should show password required error message', () => {
-  //   const passwordInput = debugElement.query(By.css('#password'));
-  //   passwordInput.nativeElement.value = ''; // Set an empty value
-  //   passwordInput.nativeElement.dispatchEvent(new Event('input')); // Trigger input event
-  //   fixture.detectChanges();
+  fit('Week4_Day6_should show password required error message', () => {
+    const passwordInput = debugElement.query(By.css('#password'));
+    passwordInput.nativeElement.value = ''; // Set an empty value
+    passwordInput.nativeElement.dispatchEvent(new Event('input')); // Trigger input event
+    fixture.detectChanges();
 
-  //   const errorMessage = debugElement.query(By.css('.error-message'));
-  //   expect(errorMessage.nativeElement.textContent).toContain('Password is required');
-  // });
+    const errorMessage = debugElement.query(By.css('.error-message'));
+    expect(errorMessage.nativeElement.textContent).toContain('Password is required');
+  });
 
   // fit('should disable submit button if form is invalid', () => {
   //   const submitButton = debugElement.query(By.css('button[type="submit"]'));
@@ -169,6 +168,11 @@ describe('LoginComponent', () => {
 
   //   expect(submitButton.nativeElement.disabled).toBe(true);  // Expect button to be disabled
   // });
-  // Add more test cases for different scenarios, e.g., invalid login, etc.
 
+
+
+
+
+
+  // Add more test cases for different scenarios, e.g., invalid login, etc.
 });
