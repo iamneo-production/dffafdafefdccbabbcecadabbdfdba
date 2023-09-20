@@ -1,6 +1,6 @@
 
 const puppeteer = require('puppeteer');
-// process.env.CHROME_BIN = puppeteer.executablePath();
+process.env.CHROME_BIN = puppeteer.executablePath();
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -49,4 +49,3 @@ module.exports = function (config) {
     restartOnFileChange: false
   });
 };
-https://divakars7@dev.azure.com/divakars7/IPLBidding/_git/IPLBidding
